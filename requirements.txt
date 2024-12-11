@@ -4,4 +4,6 @@ seaborn
 keras
 matplotlib
 scikit-learn
--e .
+catboost
+xgboost
+#-e .
