@@ -19,6 +19,14 @@ def save_object(file_path, obj):
             logging.info(" pickle file dumped")
     except Exception as e:
         raise CustomException(e, sys)
+    
+    
+def load_object(file_path: str):
+    try:
+        with open(file_path,"rb") as file:
+            return dill.load(file)
+    except Exception as e:
+        raise CustomException(e, sys)
 
 
 def evaluate_models(X_train, y_train,X_test,y_test, models, params:dict):
@@ -42,3 +50,6 @@ def evaluate_models(X_train, y_train,X_test,y_test, models, params:dict):
         return report
     except Exception as e:
         raise CustomException(e, sys)
+    
+
+
